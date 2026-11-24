@@ -1,0 +1,1406 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>推特51每日吃瓜 - 官方视频门户 | 每日热点影像与社区精选</title>
+<meta name="description" content="推特51每日吃瓜官方网站，聚焦每日网络热点与吃瓜影像的原创视频内容平台，为企业、创作者与社区用户提供高清、专业、值得信赖的内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111116'/%3E%3Ccircle cx='32' cy='30' r='12' fill='none' stroke='%23ff5c8a' stroke-width='4'/%3E%3Cpath d='M32 18v-6M32 48v-6M20 30h-6M50 30h-6' stroke='%23ffd166' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tc51-bg:#111116;
+  --tc51-bg2:#18181f;
+  --tc51-panel:#1e1e27;
+  --tc51-line:#2c2c38;
+  --tc51-text:#ecedf2;
+  --tc51-muted:#9a9aac;
+  --tc51-accent:#ff5c8a;
+  --tc51-accent2:#ffd166;
+  --tc51-green:#4fd1a5;
+  --tc51-radius:16px;
+  --tc51-sticky:118px;
+  --tc51-shadow:0 14px 40px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255,92,138,.14), transparent 60%),
+    radial-gradient(900px 500px at 0% 10%, rgba(79,209,165,.10), transparent 55%),
+    var(--tc51-bg);
+  color:var(--tc51-text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.3;font-weight:800;letter-spacing:.3px}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%;display:block}
+ul,ol{margin:0 0 1em;padding-left:1.2em}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,textarea{font-family:inherit}
+
+/* ===== sticky announcement + header ===== */
+.tc51-sticky-wrap{
+  position:sticky;top:0;z-index:120;
+}
+.tc51-announce{
+  background:linear-gradient(90deg,#2b1020,#231a2e 45%,#10231f);
+  border-bottom:1px solid var(--tc51-line);
+  font-size:13.5px;
+  color:#f4d8e2;
+}
+.tc51-announce-inner{
+  max-width:1200px;margin:0 auto;padding:8px 20px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.tc51-announce-tag{
+  background:var(--tc51-accent);color:#1a0b12;font-weight:800;
+  font-size:11.5px;letter-spacing:1px;padding:2px 9px;border-radius:999px;flex:0 0 auto;
+}
+.tc51-announce-text{opacity:.92}
+.tc51-announce-text b{color:var(--tc51-accent2);font-weight:700}
+.tc51-announce-more{
+  margin-left:auto;font-size:12.5px;color:#ffd166;border-bottom:1px dashed rgba(255,209,102,.5);
+  padding-bottom:1px;flex:0 0 auto;
+}
+.tc51-header{
+  background:rgba(17,17,22,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--tc51-line);
+}
+.tc51-header-inner{
+  max-width:1200px;margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;gap:18px;
+}
+.tc51-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.tc51-logo-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(140deg,var(--tc51-accent),#8b3df5);
+  display:grid;place-items:center;font-weight:900;font-size:15px;color:#fff;
+  box-shadow:0 6px 18px rgba(255,92,138,.35);
+}
+.tc51-logo-txt{display:flex;flex-direction:column;line-height:1.15}
+.tc51-logo-txt strong{font-size:17px;letter-spacing:.5px}
+.tc51-logo-txt span{font-size:10.5px;color:var(--tc51-muted);letter-spacing:2px}
+.tc51-nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.tc51-nav a{
+  font-size:14px;color:#c9cad6;padding:7px 12px;border-radius:999px;transition:.2s;
+}
+.tc51-nav a:hover{background:#262633;color:#fff}
+.tc51-search{
+  position:relative;flex:0 1 236px;min-width:150px;
+}
+.tc51-search input{
+  width:100%;padding:9px 14px 9px 36px;border-radius:999px;
+  background:#20202b;border:1px solid var(--tc51-line);color:var(--tc51-text);
+  font-size:13.5px;outline:none;transition:.2s;
+}
+.tc51-search input:focus{border-color:var(--tc51-accent);box-shadow:0 0 0 3px rgba(255,92,138,.15)}
+.tc51-search-ico{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;
+  color:var(--tc51-muted);pointer-events:none;
+}
+.tc51-search-hint{
+  position:absolute;left:0;right:0;top:calc(100% + 8px);
+  background:#1c1c25;border:1px solid var(--tc51-line);border-radius:12px;
+  padding:10px 12px;font-size:12.5px;color:var(--tc51-muted);
+  box-shadow:var(--tc51-shadow);display:none;z-index:60;
+}
+.tc51-search-hint.is-on{display:block}
+.tc51-search-hint b{color:var(--tc51-accent2)}
+.tc51-burger{
+  display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--tc51-line);
+  background:#20202b;place-items:center;margin-left:auto;
+}
+.tc51-burger span{display:block;width:17px;height:2px;background:#fff;margin:3px 0;border-radius:2px}
+.tc51-mobile-nav{display:none;border-top:1px solid var(--tc51-line);background:#16161e}
+.tc51-mobile-nav.is-open{display:block}
+.tc51-mobile-nav a{display:block;padding:12px 22px;font-size:14.5px;border-bottom:1px solid #22222c;color:#d3d4df}
+
+/* ===== layout helpers ===== */
+.tc51-container{max-width:1200px;margin:0 auto;padding:0 20px}
+.tc51-section{padding:56px 0 20px}
+.tc51-section-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.tc51-section-head h2{font-size:clamp(22px,3vw,30px);margin:0}
+.tc51-kicker{
+  font-size:11.5px;letter-spacing:3px;color:var(--tc51-accent);font-weight:800;
+  text-transform:uppercase;display:block;margin-bottom:6px;
+}
+.tc51-section-desc{color:var(--tc51-muted);font-size:14px;max-width:640px;margin:0}
+.tc51-chip{
+  display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;
+  background:#262633;color:#c3c4d2;border:1px solid var(--tc51-line);margin:0 6px 6px 0;
+}
+.tc51-chip--accent{background:rgba(255,92,138,.16);color:#ff9ab5;border-color:rgba(255,92,138,.35)}
+.tc51-chip--green{background:rgba(79,209,165,.14);color:#84e7c5;border-color:rgba(79,209,165,.32)}
+.tc51-btn{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  padding:11px 22px;border-radius:999px;font-size:14px;font-weight:700;
+  transition:.2s;border:1px solid transparent;
+}
+.tc51-btn--primary{background:linear-gradient(135deg,var(--tc51-accent),#ff7ea6);color:#1b0810;box-shadow:0 8px 22px rgba(255,92,138,.30)}
+.tc51-btn--primary:hover{transform:translateY(-2px)}
+.tc51-btn--ghost{border-color:#3a3a49;color:#dcdeea;background:#1d1d26}
+.tc51-btn--ghost:hover{border-color:var(--tc51-accent);color:#fff}
+.tc51-btn--sm{padding:7px 14px;font-size:12.5px}
+.tc51-grid{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.tc51-mini-stat{color:var(--tc51-muted);font-size:12.5px}
+
+/* ===== hero ===== */
+.tc51-hero{padding:48px 0 12px}
+.tc51-hero-inner{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center;
+}
+.tc51-hero-copy h1{
+  font-size:clamp(30px,5.4vw,58px);letter-spacing:-.5px;line-height:1.14;margin-bottom:16px;
+}
+.tc51-hero-copy h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--tc51-accent),var(--tc51-accent2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.tc51-hero-claim{
+  display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;
+  letter-spacing:1.6px;color:var(--tc51-accent2);border:1px solid rgba(255,209,102,.36);
+  padding:6px 14px;border-radius:999px;margin-bottom:20px;background:rgba(255,209,102,.07);
+}
+.tc51-hero-claim i{width:7px;height:7px;border-radius:50%;background:var(--tc51-accent2);display:block;animation:tc51-pulse 2s infinite}
+@keyframes tc51-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.tc51-hero-lead{font-size:clamp(14.5px,1.6vw,16.5px);color:#bfc0cf;max-width:620px}
+.tc51-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.tc51-hero-visual{position:relative}
+.tc51-hero-visual img{border-radius:20px;width:100%;box-shadow:var(--tc51-shadow)}
+.tc51-hero-badges{
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;
+}
+.tc51-hero-badge{
+  background:#1c1c26;border:1px solid var(--tc51-line);border-radius:12px;
+  padding:8px 13px;font-size:12.5px;color:#c7c8d6;
+}
+.tc51-hero-badge b{color:var(--tc51-accent2);font-size:14px;margin-right:4px}
+@media(min-width:900px){
+  .tc51-hero-inner{grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:44px}
+}
+
+/* ===== stats ===== */
+.tc51-stats{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:32px}
+@media(min-width:720px){.tc51-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tc51-stat{
+  background:linear-gradient(160deg,#1e1e28,#17171f);
+  border:1px solid var(--tc51-line);border-radius:var(--tc51-radius);padding:22px 24px;
+}
+.tc51-stat b{display:block;font-size:clamp(26px,3.4vw,36px);color:#fff;letter-spacing:-1px}
+.tc51-stat b i{font-style:normal;font-size:15px;color:var(--tc51-accent);margin-left:2px}
+.tc51-stat span{font-size:12.5px;color:var(--tc51-muted);letter-spacing:.5px}
+
+/* ===== about ===== */
+.tc51-about{
+  background:#171720;border:1px solid var(--tc51-line);border-radius:22px;
+  padding:clamp(24px,4vw,42px);margin-top:44px;
+}
+.tc51-about h2{font-size:clamp(21px,2.8vw,27px)}
+.tc51-about p{color:#bfc1d0;font-size:15px}
+
+/* ===== focus / video cards ===== */
+.tc51-focus{
+  display:grid;gap:22px;grid-template-columns:minmax(0,1fr);
+}
+@media(min-width:920px){.tc51-focus{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}}
+.tc51-focus-main{
+  background:#1b1b24;border:1px solid var(--tc51-line);border-radius:20px;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+}
+.tc51-focus-main:hover{transform:translateY(-4px);box-shadow:var(--tc51-shadow)}
+.tc51-cover{position:relative;display:block}
+.tc51-cover img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tc51-play{
+  position:absolute;inset:auto 14px 14px auto;
+  width:46px;height:46px;border-radius:50%;background:rgba(255,92,138,.92);
+  display:grid;place-items:center;color:#200810;font-size:16px;font-weight:900;
+  box-shadow:0 6px 20px rgba(255,92,138,.5);
+}
+.tc51-cover-tag{
+  position:absolute;left:14px;top:14px;background:rgba(17,17,22,.82);
+  border:1px solid rgba(255,255,255,.13);backdrop-filter:blur(6px);
+  color:#ffd166;font-size:11.5px;font-weight:800;letter-spacing:1.4px;
+  padding:4px 11px;border-radius:999px;
+}
+.tc51-focus-body{padding:20px 22px 24px}
+.tc51-focus-body h3{font-size:clamp(18px,2.2vw,23px);margin-bottom:10px}
+.tc51-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--tc51-muted);margin-bottom:12px}
+.tc51-meta b{color:#d9dbe8;font-weight:600}
+.tc51-side-list{display:grid;gap:14px;align-content:start}
+.tc51-side-item{
+  display:flex;gap:12px;background:#1b1b24;border:1px solid var(--tc51-line);
+  border-radius:14px;padding:12px;transition:.2s;
+}
+.tc51-side-item:hover{border-color:rgba(255,92,138,.55);transform:translateX(3px)}
+.tc51-side-item img{width:88px;aspect-ratio:16/11;object-fit:cover;border-radius:10px;flex:0 0 auto}
+.tc51-side-item h4{font-size:14px;margin:0 0 4px;line-height:1.4}
+.tc51-side-item p{font-size:12px;color:var(--tc51-muted);margin:0}
+
+/* ===== video list ===== */
+.tc51-video-list{display:grid;gap:16px}
+.tc51-video{
+  background:#1a1a23;border:1px solid var(--tc51-line);border-radius:16px;
+  padding:20px 22px;transition:.22s;
+}
+.tc51-video:hover{border-color:#3d3d4e;background:#1e1e28}
+.tc51-video-top{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+.tc51-video h3{font-size:16.5px;margin:0 0 6px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.tc51-video h3 small{font-size:11.5px;color:var(--tc51-muted);font-weight:500}
+.tc51-video p{font-size:13.5px;color:#adb0c0;margin:0 0 10px;max-width:780px}
+.tc51-video-foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--tc51-muted)}
+.tc51-actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.tc51-act{
+  display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:5px 11px;
+  border-radius:999px;background:#252530;border:1px solid #33333f;color:#c8c9d6;transition:.18s;
+}
+.tc51-act:hover{border-color:var(--tc51-accent);color:#fff}
+.tc51-act.is-on{background:rgba(255,92,138,.18);border-color:var(--tc51-accent);color:#ff9db7}
+.tc51-act .tc51-num{font-variant-numeric:tabular-nums}
+
+/* ===== topics / specials ===== */
+.tc51-specials{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.tc51-specials{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1040px){.tc51-specials{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tc51-special{
+  background:linear-gradient(165deg,#20202b,#181820);
+  border:1px solid var(--tc51-line);border-radius:18px;padding:22px;display:flex;flex-direction:column;
+}
+.tc51-special img{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:12px;margin-bottom:16px}
+.tc51-special h3{font-size:17px;margin-bottom:8px}
+.tc51-special p{font-size:13px;color:#a8abbd;margin-bottom:12px}
+.tc51-special ul{list-style:none;padding:0;margin:0 0 14px;font-size:12.8px;color:#b6b9c9}
+.tc51-special li{padding:6px 0 6px 16px;border-bottom:1px dashed #2e2e3b;position:relative}
+.tc51-special li::before{content:"›";position:absolute;left:0;color:var(--tc51-accent)}
+.tc51-special-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--tc51-muted)}
+
+/* ===== authors ===== */
+.tc51-authors{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:680px){.tc51-authors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1040px){.tc51-authors{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tc51-author{
+  background:#1b1b24;border:1px solid var(--tc51-line);border-radius:18px;padding:20px;
+  transition:.22s;
+}
+.tc51-author:hover{border-color:rgba(255,92,138,.5);transform:translateY(-3px)}
+.tc51-author-head{display:flex;gap:13px;align-items:center;margin-bottom:12px}
+.tc51-avatar{
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  font-weight:900;font-size:18px;color:#14141b;flex:0 0 auto;
+}
+.tc51-author-head strong{display:block;font-size:15px}
+.tc51-author-head span{font-size:11.5px;color:var(--tc51-muted)}
+.tc51-author p{font-size:12.8px;color:#a8abbd;margin-bottom:10px;min-height:84px}
+.tc51-author-stat{display:flex;gap:14px;font-size:11.5px;color:var(--tc51-muted)}
+.tc51-author-stat b{color:var(--tc51-accent2);font-weight:700}
+
+/* ===== comments ===== */
+.tc51-comment-summary{
+  display:flex;gap:22px;flex-wrap:wrap;align-items:center;
+  background:#1b1b24;border:1px solid var(--tc51-line);border-radius:16px;
+  padding:18px 22px;margin-bottom:20px;
+}
+.tc51-score{font-size:40px;font-weight:900;color:var(--tc51-accent2);line-height:1}
+.tc51-score small{font-size:13px;color:var(--tc51-muted);font-weight:500}
+.tc51-bars{flex:1 1 220px;display:grid;gap:6px;min-width:180px}
+.tc51-bar{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--tc51-muted)}
+.tc51-bar i{flex:1;height:6px;border-radius:99px;background:#2b2b38;overflow:hidden;display:block}
+.tc51-bar i em{display:block;height:100%;background:linear-gradient(90deg,var(--tc51-accent),var(--tc51-accent2));border-radius:99px}
+.tc51-comments{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:820px){.tc51-comments{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tc51-comment{
+  background:#191922;border:1px solid var(--tc51-line);border-radius:14px;padding:16px 18px;
+}
+.tc51-comment-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.tc51-comment-head .tc51-avatar{width:32px;height:32px;font-size:13px}
+.tc51-comment-head strong{font-size:13px}
+.tc51-comment-head span{font-size:11px;color:var(--tc51-muted);margin-left:auto}
+.tc51-comment p{font-size:13.2px;color:#b4b7c7;margin:0}
+.tc51-comment p mark{background:rgba(255,209,102,.2);color:#ffd98a;padding:0 3px;border-radius:3px}
+
+/* ===== analysis / long copy ===== */
+.tc51-analysis{display:grid;gap:26px}
+.tc51-analysis-art{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:720px){.tc51-analysis-art{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tc51-analysis-art img{border-radius:14px;width:100%;aspect-ratio:16/10;object-fit:cover}
+.tc51-prose{max-width:none}
+.tc51-prose h2{font-size:clamp(22px,3vw,30px)}
+.tc51-prose h3{font-size:17.5px;margin-top:26px;color:#fff;padding-left:12px;border-left:3px solid var(--tc51-accent)}
+.tc51-prose p{color:#b2b5c5;font-size:14.6px}
+.tc51-prose strong{color:#fff}
+.tc51-prose .tc51-quote{
+  border-left:3px solid var(--tc51-accent2);background:#1c1c26;padding:14px 18px;
+  border-radius:0 12px 12px 0;color:#d3d5e2;font-size:14px;margin:18px 0;
+}
+.tc51-keyword-note{
+  background:rgba(79,209,165,.08);border:1px solid rgba(79,209,165,.28);
+  border-radius:14px;padding:16px 18px;font-size:13.5px;color:#9fe8cd;margin:20px 0;
+}
+
+/* ===== dynamics / partners ===== */
+.tc51-split{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:960px){.tc51-split{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.tc51-dynamics{display:grid;gap:12px}
+.tc51-dyna{
+  display:flex;gap:14px;padding:14px 16px;background:#1a1a23;border-radius:12px;
+  border:1px solid var(--tc51-line);align-items:flex-start;
+}
+.tc51-dyna time{font-size:11.5px;color:var(--tc51-accent2);flex:0 0 74px;font-weight:700;letter-spacing:.4px}
+.tc51-dyna h3{font-size:14px;margin:0 0 3px}
+.tc51-dyna p{font-size:12.5px;color:var(--tc51-muted);margin:0}
+.tc51-partners{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.tc51-partner{
+  background:#1a1a23;border:1px solid var(--tc51-line);border-radius:12px;
+  padding:18px 12px;text-align:center;font-size:13px;font-weight:700;color:#c9cbd9;
+  transition:.2s;letter-spacing:.5px;
+}
+.tc51-partner:hover{border-color:var(--tc51-accent);color:#fff}
+.tc51-partner span{display:block;font-size:10.5px;font-weight:500;color:var(--tc51-muted);margin-top:4px;letter-spacing:1.5px}
+
+/* ===== FAQ ===== */
+.tc51-faq{display:grid;gap:10px}
+.tc51-faq details{
+  background:#1a1a23;border:1px solid var(--tc51-line);border-radius:12px;padding:0;
+  overflow:hidden;
+}
+.tc51-faq details[open]{border-color:rgba(255,92,138,.45);background:#1e1e28}
+.tc51-faq summary{
+  list-style:none;cursor:pointer;padding:15px 18px;font-size:14px;font-weight:700;
+  display:flex;align-items:center;gap:12px;color:#e6e7ef;
+}
+.tc51-faq summary::-webkit-details-marker{display:none}
+.tc51-faq summary::after{
+  content:"+";margin-left:auto;color:var(--tc51-accent);font-size:19px;font-weight:900;line-height:1;
+}
+.tc51-faq details[open] summary::after{content:"–"}
+.tc51-faq details p{padding:0 18px 16px;margin:0;font-size:13.4px;color:#a9acbd}
+
+/* ===== CTA / submit ===== */
+.tc51-cta{
+  background:linear-gradient(120deg,#241428,#1a1f2a 50%,#14241f);
+  border:1px solid var(--tc51-line);border-radius:22px;padding:clamp(26px,4vw,46px);
+  display:grid;gap:22px;grid-template-columns:minmax(0,1fr);align-items:center;
+}
+@media(min-width:860px){.tc51-cta{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.tc51-cta h2{font-size:clamp(22px,3vw,30px);margin-bottom:10px}
+.tc51-cta p{color:#b9bccb;font-size:14.5px;margin:0;max-width:560px}
+.tc51-cta-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start}
+
+/* ===== footer ===== */
+.tc51-footer{margin-top:64px;border-top:1px solid var(--tc51-line);background:#141419;padding:44px 0 30px}
+.tc51-footer-grid{display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.tc51-footer-grid{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr)}}
+.tc51-footer h4{font-size:13.5px;letter-spacing:1.5px;color:#fff;margin-bottom:14px}
+.tc51-footer p,.tc51-footer li{font-size:13px;color:#8b8ea0}
+.tc51-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.tc51-footer a:hover{color:var(--tc51-accent2)}
+.tc51-footer-bottom{
+  max-width:1200px;margin:32px auto 0;padding:20px 20px 0;border-top:1px solid #23232d;
+  display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#71748a;
+}
+
+/* ===== toast & modal ===== */
+.tc51-toast{
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);
+  background:#262631;border:1px solid #3a3a4a;color:#fff;padding:11px 20px;border-radius:999px;
+  font-size:13px;box-shadow:var(--tc51-shadow);opacity:0;pointer-events:none;transition:.3s;z-index:400;
+}
+.tc51-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.tc51-modal{
+  position:fixed;inset:0;background:rgba(8,8,12,.72);backdrop-filter:blur(5px);
+  display:none;place-items:center;padding:20px;z-index:500;
+}
+.tc51-modal.is-on{display:grid}
+.tc51-modal-box{
+  background:#1c1c25;border:1px solid #33333f;border-radius:18px;max-width:560px;width:100%;
+  padding:26px;box-shadow:var(--tc51-shadow);max-height:86vh;overflow:auto;
+}
+.tc51-modal-box h3{font-size:18px;margin-bottom:6px}
+.tc51-modal-box .tc51-modal-sub{font-size:13px;color:var(--tc51-muted);margin-bottom:16px}
+.tc51-modal-box textarea,.tc51-modal-box input[type="text"]{
+  width:100%;background:#24242f;border:1px solid #34343f;border-radius:10px;
+  padding:11px 13px;color:#fff;font-size:13.5px;outline:none;margin-bottom:12px;
+}
+.tc51-modal-box textarea{min-height:96px;resize:vertical}
+.tc51-modal-box textarea:focus,.tc51-modal-box input:focus{border-color:var(--tc51-accent)}
+.tc51-modal-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+
+/* back to top */
+.tc51-top{
+  position:fixed;right:20px;bottom:24px;width:44px;height:44px;border-radius:50%;
+  background:#25252f;border:1px solid #3a3a49;color:#fff;display:grid;place-items:center;
+  opacity:0;pointer-events:none;transition:.25s;z-index:300;font-size:16px;
+}
+.tc51-top.is-on{opacity:1;pointer-events:auto}
+.tc51-top:hover{border-color:var(--tc51-accent);color:var(--tc51-accent)}
+
+.tc51-footnote{font-size:12px;color:#6c6f83;margin-top:10px}
+
+/* search dim */
+.tc51-hidden{display:none !important}
+
+@media(max-width:899px){
+  .tc51-nav{display:none}
+  .tc51-burger{display:grid}
+  .tc51-search{order:3;flex:1 1 100%;margin-left:0}
+  .tc51-header-inner{flex-wrap:wrap;row-gap:12px}
+  .tc51-announce-more{display:none}
+  html{scroll-padding-top:150px}
+}
+@media(min-width:900px){
+  html{scroll-padding-top:132px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="tc51-sticky-wrap">
+  <div class="tc51-announce">
+    <div class="tc51-announce-inner">
+      <span class="tc51-announce-tag">今日更新</span>
+      <span class="tc51-announce-text">
+        <b>11月22日</b> 新增《热搜十二小时》第41期、话题企划「反转之前」上线、创作者<b>柠檬不酸</b>入驻首播，以及「吃瓜观察室」投票通道开启。
+      </span>
+      <a class="tc51-announce-more" href="#tc51-dynamics">查看全部动态 →</a>
+    </div>
+  </div>
+  <header class="tc51-header">
+    <div class="tc51-header-inner">
+      <a class="tc51-logo" href="#tc51-top" aria-label="推特51每日吃瓜官方网站首页">
+        <span class="tc51-logo-mark">51</span>
+        <span class="tc51-logo-txt"><strong>推特51每日吃瓜</strong><span>DAILY MELON TV</span></span>
+      </a>
+      <nav class="tc51-nav" aria-label="主导航">
+        <a href="#tc51-focus">焦点</a>
+        <a href="#tc51-videos">热门</a>
+        <a href="#tc51-specials">企划</a>
+        <a href="#tc51-authors">创作者</a>
+        <a href="#tc51-analysis">深度</a>
+        <a href="#tc51-comments">口碑</a>
+        <a href="#tc51-faq">帮助</a>
+      </nav>
+      <div class="tc51-search">
+        <svg class="tc51-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input id="tc51Search" type="text" placeholder="搜索话题 / 创作者 / 企划" aria-label="站内搜索">
+        <div class="tc51-search-hint" id="tc51SearchHint"></div>
+      </div>
+      <button class="tc51-burger" id="tc51Burger" aria-label="展开导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="tc51-mobile-nav" id="tc51MobileNav">
+      <a href="#tc51-focus">焦点内容</a>
+      <a href="#tc51-videos">热门视频</a>
+      <a href="#tc51-specials">专题企划</a>
+      <a href="#tc51-authors">创作者矩阵</a>
+      <a href="#tc51-analysis">深度解析</a>
+      <a href="#tc51-comments">用户口碑</a>
+      <a href="#tc51-dynamics">企业动态</a>
+      <a href="#tc51-faq">常见问题</a>
+    </div>
+  </header>
+</div>
+
+<main id="tc51-top">
+
+  <!-- ===== HERO ===== -->
+  <section class="tc51-hero tc51-container" aria-labelledby="tc51-h1">
+    <div class="tc51-hero-inner">
+      <div class="tc51-hero-copy">
+        <span class="tc51-hero-claim"><i></i>官方网站 · 每日更新的热点影像社区</span>
+        <h1 id="tc51-h1">推特51每日吃瓜</h1>
+        <p class="tc51-hero-lead">
+          一个把每天的热点、讨论与情绪，整理成可回溯影像档案的原创视频平台。我们用镜头记录热搜的形成、反转与落幕，也记录围观背后真实的普通人。这里是品牌官网，也是创作者与观众共同维护的内容社区。
+        </p>
+        <div class="tc51-hero-actions">
+          <a class="tc51-btn tc51-btn--primary" href="#tc51-focus">立即观看今日焦点</a>
+          <button class="tc51-btn tc51-btn--ghost" type="button" data-tc51-modal="tc51SubmitModal">上传我的视频</button>
+          <a class="tc51-btn tc51-btn--ghost" href="#tc51-specials">浏览专题企划</a>
+        </div>
+        <div class="tc51-hero-badges">
+          <span class="tc51-hero-badge"><b>每日</b>18:00 更新</span>
+          <span class="tc51-hero-badge"><b>高清</b>1080P 正版内容</span>
+          <span class="tc51-hero-badge"><b>社区</b>共创话题投票</span>
+        </div>
+      </div>
+      <div class="tc51-hero-visual">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 560'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23241326'/%3E%3Cstop offset='0.55' stop-color='%23181a2b'/%3E%3Cstop offset='1' stop-color='%230f2320'/%3E%3C/linearGradient%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23ff5c8a'/%3E%3Cstop offset='1' stop-color='%23ffd166'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='720' height='560' fill='url(%23bg)'/%3E%3Ccircle cx='560' cy='120' r='150' fill='%23ff5c8a' opacity='0.12'/%3E%3Ccircle cx='150' cy='430' r='180' fill='%234fd1a5' opacity='0.10'/%3E%3Cg stroke='%23343446' stroke-width='1'%3E%3Cpath d='M60 460 L660 460'/%3E%3Cpath d='M60 110 L660 110'/%3E%3C/g%3E%3Cg%3E%3Crect x='86' y='150' width='250' height='48' rx='24' fill='%23ffffff' opacity='0.06'/%3E%3Ccircle cx='112' cy='174' r='13' fill='url(%23g1)'/%3E%3Crect x='136' y='166' width='150' height='8' rx='4' fill='%23ff5c8a' opacity='0.8'/%3E%3Crect x='136' y='182' width='96' height='6' rx='3' fill='%23ffffff' opacity='0.35'/%3E%3C/g%3E%3Cg%3E%3Crect x='86' y='222' width='300' height='120' rx='14' fill='%23ffffff' opacity='0.05'/%3E%3Cpath d='M110 300 L150 262 L190 288 L232 240 L274 276 L316 232 L356 268' fill='none' stroke='%234fd1a5' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cg%3E%3Crect x='86' y='366' width='548' height='1' fill='%23ffffff' opacity='0.15'/%3E%3Cg fill='%23ffffff' opacity='0.55' font-family='sans-serif'%3E%3Ctext x='86' y='404' font-size='20' font-weight='700'%3EDaily%3C/text%3E%3Ctext x='86' y='430' font-size='13' opacity='0.6'%3E热点影像 · 每日归档%3C/text%3E%3C/g%3E%3C/g%3E%3Cg transform='translate(430,250)'%3E%3Ccircle r='84' fill='none' stroke='%23ffffff' opacity='0.18' stroke-width='1'/%3E%3Ccircle r='62' fill='none' stroke='%23ffd166' opacity='0.5' stroke-width='2' stroke-dasharray='10 14'/%3E%3Ccircle r='38' fill='%23ff5c8a'/%3E%3Cpath d='M-9 -14 L18 0 L-9 14 Z' fill='%23231019'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.28'%3E%3Ccircle cx='592' cy='392' r='5'/%3E%3Ccircle cx='620' cy='420' r='3'/%3E%3Ccircle cx='566' cy='430' r='3'/%3E%3C/g%3E%3C/svg%3E" alt="推特51每日吃瓜官网首屏主视觉：每日热点影像归档与播放界面示意" width="720" height="560">
+      </div>
+    </div>
+
+    <div class="tc51-stats" role="list" aria-label="平台核心数据">
+      <div class="tc51-stat" role="listitem">
+        <b data-tc51-count="1286">0</b><span>累计上线原创影像节目（期）</span>
+      </div>
+      <div class="tc51-stat" role="listitem">
+        <b data-tc51-count="486" data-tc51-suffix="万">0</b><span>月度内容播放与互动人次</span>
+      </div>
+      <div class="tc51-stat" role="listitem">
+        <b data-tc51-count="312">0</b><span>签约与入驻创作者（位）</span>
+      </div>
+    </div>
+
+    <div class="tc51-about" id="tc51-about">
+      <span class="tc51-kicker">About the brand</span>
+      <h2>关于推特51每日吃瓜：把围观变成诚实的记录</h2>
+      <p>
+        推特51每日吃瓜是一家专注于每日热点影像化表达的企业，官方网站提供节目正片、企划专题、创作者主页与社区互动入口。我们坚持以原创与正版为核心，围绕「记录—核查—讨论—留存」四个环节搭建内容生态：每天由编导组筛选值得关注的公共话题，经过多源核对后制作成 3 至 12 分钟的影像条目，并由创作者补充在地视角与行业视角。平台深耕热点资讯这一垂直领域，强调高清画质、可回溯的事实链与温和的讨论氛围，希望让每一次围观都留下可被检验的痕迹。这里既有严肃的行业观察，也有轻松的吃瓜日常，相信真实的记录本身，就是一种温柔而有力量的社会责任。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FOCUS ===== -->
+  <section class="tc51-section tc51-container" id="tc51-focus" aria-labelledby="tc51-focus-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Today Focus</span>
+        <h2 id="tc51-focus-h">今日焦点 · 推特51每日吃瓜编辑部推荐</h2>
+      </div>
+      <p class="tc51-section-desc">每天只保留三条值得看完的影像。焦点头条由编导组与核查员共同署名，正文标注信息来源与核对时间。</p>
+    </div>
+
+    <div class="tc51-focus">
+      <article class="tc51-focus-main" data-tc51-searchable="热搜十二小时 反转之前 夜间直播 核查">
+        <span class="tc51-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23381a2e'/%3E%3Cstop offset='1' stop-color='%23141b2c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23a)'/%3E%3Cg opacity='0.9'%3E%3Ccircle cx='660' cy='90' r='120' fill='%23ff5c8a' opacity='0.18'/%3E%3Ccircle cx='120' cy='380' r='150' fill='%234fd1a5' opacity='0.12'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.08'%3E%3Crect x='60' y='90' width='300' height='1'/%3E%3Crect x='60' y='150' width='220' height='1'/%3E%3Crect x='60' y='210' width='260' height='1'/%3E%3C/g%3E%3Cg font-family='sans-serif'%3E%3Ctext x='60' y='160' fill='%23ffffff' font-size='56' font-weight='800' letter-spacing='2'%3E12h%3C/text%3E%3Ctext x='60' y='200' fill='%23ffd166' font-size='18' font-weight='700'%3E热搜十二小时 · 第41期%3C/text%3E%3Ctext x='60' y='238' fill='%23ffffff' opacity='0.55' font-size='14'%3E信息核查 · 时间线还原 · 多方视角%3C/text%3E%3C/g%3E%3Cg transform='translate(600,300)'%3E%3Crect x='-110' y='-60' width='220' height='120' rx='14' fill='%23ffffff' opacity='0.06'/%3E%3Cpath d='M-80 30 L-40 -10 L0 18 L40 -26 L80 8' fill='none' stroke='%23ff5c8a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E" alt="热搜十二小时第41期封面：十二小时时间线与信息核查折线图" width="800" height="450">
+          <span class="tc51-cover-tag">焦点 · 核查版</span>
+          <span class="tc51-play" aria-hidden="true">▶</span>
+        </span>
+        <div class="tc51-focus-body">
+          <h3>热搜十二小时：一条爆款视频从出现到反转的完整轨迹</h3>
+          <div class="tc51-meta">
+            <span>作者 <b>编导组·林野</b></span>
+            <span>播放 <b>128.4万</b></span>
+            <span>点赞 <b>9.7万</b></span>
+            <span>收藏 <b>3.1万</b></span>
+            <span>时长 <b>18:42</b></span>
+          </div>
+          <p>
+            我们把 11 月 21 日晚上的一条刷屏视频拆成十二个小时：原始素材上传、二次剪辑扩散、评论区情绪堆叠、当事人回应、信息核查补全。片子没有给出道德判决，只把每个节点的时间、账号与证据摆在一起，让观众自己看完这段互联网的呼吸曲线。这也是推特51每日吃瓜最想坚持的一种记录方式——先弄清楚发生了什么，再讨论它为什么发生。
+          </p>
+          <div class="tc51-actions">
+            <button class="tc51-act" type="button" data-tc51-like="128400"><span>👍</span><span class="tc51-num">9.7万</span></button>
+            <button class="tc51-act" type="button" data-tc51-fav aria-pressed="false"><span>☆</span><span>收藏</span></button>
+            <button class="tc51-act" type="button" data-tc51-copy><span>🔗</span><span>复制链接</span></button>
+            <button class="tc51-act" type="button" data-tc51-modal="tc51CommentModal"><span>💬</span><span>写评论</span></button>
+          </div>
+        </div>
+      </article>
+
+      <div class="tc51-side-list">
+        <article class="tc51-side-item" data-tc51-searchable="反转之前 企划 当事人 回应">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 220'%3E%3Crect width='320' height='220' fill='%231c2230'/%3E%3Ccircle cx='250' cy='60' r='78' fill='%23ffd166' opacity='0.16'/%3E%3Cg stroke='%23ff5c8a' stroke-width='3' fill='none'%3E%3Cpath d='M40 170 L90 120 L140 150 L196 96 L256 124'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.85'%3E%3Ccircle cx='90' cy='120' r='4'/%3E%3Ccircle cx='196' cy='96' r='4'/%3E%3C/g%3E%3Ctext x='40' y='60' fill='%23ffffff' opacity='0.5' font-size='13' font-family='sans-serif'%3EREFLECTION%3C/text%3E%3C/svg%3E" alt="企划「反转之前」封面：情绪曲线与反转节点折线示意" width="320" height="220">
+          <div>
+            <h4>反转之前：当事人第一次开口的那二十分钟</h4>
+            <p>企划首发 · 播放 46.2万 · 讨论 5.8千</p>
+          </div>
+        </article>
+        <article class="tc51-side-item" data-tc51-searchable="吃瓜观察室 投票 社区 讨论">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 220'%3E%3Crect width='320' height='220' fill='%231a2a26'/%3E%3Cg fill='%234fd1a5'%3E%3Crect x='50' y='130' width='34' height='50' rx='5' opacity='0.6'/%3E%3Crect x='98' y='100' width='34' height='80' rx='5' opacity='0.75'/%3E%3Crect x='146' y='70' width='34' height='110' rx='5' opacity='0.9'/%3E%3Crect x='194' y='115' width='34' height='65' rx='5' opacity='0.7'/%3E%3C/g%3E%3Ccircle cx='262' cy='72' r='26' fill='none' stroke='%23ffd166' stroke-width='3'/%3E%3Cpath d='M252 72 L260 80 L274 62' stroke='%23ffd166' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="社区投票板块封面：绿色柱状统计与选中标记" width="320" height="220">
+          <div>
+            <h4>吃瓜观察室第 12 期投票：你最想看到哪种后续</h4>
+            <p>社区共创 · 参与 21.4万 · 今晚 22:00 截止</p>
+          </div>
+        </article>
+        <article class="tc51-side-item" data-tc51-searchable="夜间直播 剪辑室 幕后 创作">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 220'%3E%3Crect width='320' height='220' fill='%23251c2c'/%3E%3Cg stroke='%23ffffff' opacity='0.25'%3E%3Crect x='40' y='60' width='240' height='100' rx='10' fill='none'/%3E%3Cpath d='M40 110 L280 110'/%3E%3Cpath d='M120 60 L120 160'/%3E%3C/g%3E%3Cg fill='%23ff5c8a'%3E%3Crect x='52' y='74' width='56' height='26' rx='4' opacity='0.85'/%3E%3Crect x='132' y='122' width='90' height='26' rx='4' opacity='0.55'/%3E%3C/g%3E%3Ctext x='40' y='196' fill='%23ffd166' font-size='13' font-family='sans-serif'%3EEDIT ROOM · 21:30%3C/text%3E%3C/svg%3E" alt="夜间剪辑室幕后封面：时间轴与素材片段示意" width="320" height="220">
+          <div>
+            <h4>夜间剪辑室：我们如何把 4 小时素材压进 9 分钟</h4>
+            <p>创作幕后 · 播放 33.6万 · 收藏 1.2万</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VIDEOS ===== -->
+  <section class="tc51-section tc51-container" id="tc51-videos" aria-labelledby="tc51-videos-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Trending Videos</span>
+        <h2 id="tc51-videos-h">热门视频流</h2>
+      </div>
+      <p class="tc51-section-desc">推特51每日吃瓜的日常更新区，按热度与更新时间混合排序。点击标签可筛选同类内容，操作按钮支持点赞、收藏与评论。</p>
+    </div>
+
+    <div class="tc51-video-list" id="tc51VideoList">
+
+      <article class="tc51-video" data-tc51-searchable="城市探索 夜市 城市烟火 本地">
+        <div class="tc51-video-top">
+          <div>
+            <h3>凌晨两点的夜市：摊主们怎么看待自己突然被拍火 <small>城市探索 · 12:08</small></h3>
+            <p>一条关于夜市摊主的视频在两天内被转发上万次。我们回到现场，问了六个摊位同一个问题：流量来了，你的生活变了吗？答案比弹幕想象的要复杂。</p>
+            <span class="tc51-chip tc51-chip--accent">城市探索</span>
+            <span class="tc51-chip">本地观察</span>
+            <span class="tc51-chip">街头采访</span>
+          </div>
+        </div>
+        <div class="tc51-video-foot">
+          <span>作者 城市切片机</span><span>播放 86.3万</span><span>点赞 6.2万</span><span>收藏 1.8万</span>
+          <div class="tc51-actions">
+            <button class="tc51-act" type="button" data-tc51-like="863000"><span>👍</span><span class="tc51-num">6.2万</span></button>
+            <button class="tc51-act" type="button" data-tc51-fav aria-pressed="false"><span>☆</span><span>收藏</span></button>
+            <button class="tc51-act" type="button" data-tc51-modal="tc51CommentModal"><span>💬</span><span>评论</span></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tc51-video" data-tc51-searchable="经验分享 核查 信息素养 教程">
+        <div class="tc51-video-top">
+          <div>
+            <h3>三分钟核查法：看到一个震惊标题，先做这四步 <small>实用技巧 · 07:36</small></h3>
+            <p>截图来源、时间戳、原始发布者、二次剪辑痕迹——核查员把日常使用的四步流程讲成普通人能上手的版本，附带两个真实案例的完整对照。</p>
+            <span class="tc51-chip tc51-chip--green">经验分享</span>
+            <span class="tc51-chip">信息核查</span>
+            <span class="tc51-chip">教程干货</span>
+          </div>
+        </div>
+        <div class="tc51-video-foot">
+          <span>作者 核查员老周</span><span>播放 54.1万</span><span>点赞 4.9万</span><span>收藏 2.6万</span>
+          <div class="tc51-actions">
+            <button class="tc51-act" type="button" data-tc51-like="541000"><span>👍</span><span class="tc51-num">4.9万</span></button>
+            <button class="tc51-act" type="button" data-tc51-fav aria-pressed="false"><span>☆</span><span>收藏</span></button>
+            <button class="tc51-act" type="button" data-tc51-modal="tc51CommentModal"><span>💬</span><span>评论</span></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tc51-video" data-tc51-searchable="人物访谈 当事人 情绪 深度">
+        <div class="tc51-video-top">
+          <div>
+            <h3>被误解的七十二小时：一位普通用户的自述 <small>人物访谈 · 15:20</small></h3>
+            <p>她的照片被配上一段不相关的文字传播，评论从好奇变成指责只用了半天。访谈做了两件事：让她完整讲完自己的时间线，也请律师解释普通人可以怎么应对。</p>
+            <span class="tc51-chip tc51-chip--accent">人物访谈</span>
+            <span class="tc51-chip">真实故事</span>
+            <span class="tc51-chip">法律视角</span>
+          </div>
+        </div>
+        <div class="tc51-video-foot">
+          <span>作者 谈话半径</span><span>播放 62.8万</span><span>点赞 5.4万</span><span>收藏 2.1万</span>
+          <div class="tc51-actions">
+            <button class="tc51-act" type="button" data-tc51-like="628000"><span>👍</span><span class="tc51-num">5.4万</span></button>
+            <button class="tc51-act" type="button" data-tc51-fav aria-pressed="false"><span>☆</span><span>收藏</span></button>
+            <button class="tc51-act" type="button" data-tc51-modal="tc51CommentModal"><span>💬</span><span>评论</span></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tc51-video" data-tc51-searchable="深度测评 平台 机制 算法">
+        <div class="tc51-video-top">
+          <div>
+            <h3>同一段素材，为什么在两个平台长成了两种舆论 <small>深度测评 · 11:04</small></h3>
+            <p>用一段中性素材做对照实验，观察推荐机制、评论区排序与话题标签如何影响判断。结论不新鲜，但过程值得每个内容创作者看一遍。</p>
+            <span class="tc51-chip">深度测评</span>
+            <span class="tc51-chip">行业观察</span>
+            <span class="tc51-chip tc51-chip--green">机制研究</span>
+          </div>
+        </div>
+        <div class="tc51-video-foot">
+          <span>作者 数据厨房</span><span>播放 41.7万</span><span>点赞 3.8万</span><span>收藏 1.9万</span>
+          <div class="tc51-actions">
+            <button class="tc51-act" type="button" data-tc51-like="417000"><span>👍</span><span class="tc51-num">3.8万</span></button>
+            <button class="tc51-act" type="button" data-tc51-fav aria-pressed="false"><span>☆</span><span>收藏</span></button>
+            <button class="tc51-act" type="button" data-tc51-modal="tc51CommentModal"><span>💬</span><span>评论</span></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tc51-video" data-tc51-searchable="创作幕后 剪辑 团队 日常">
+        <div class="tc51-video-top">
+          <div>
+            <h3>一条视频的诞生：从选题会到凌晨三点的字幕校对 <small>创作幕后 · 09:52</small></h3>
+            <p>跟着推特51每日吃瓜的制作组过一天：上午九点选题会，下午两点素材核查，晚上八点混音，凌晨两点字幕校对。镜头里出现最多的词是「再核一遍」。</p>
+            <span class="tc51-chip">创作幕后</span>
+            <span class="tc51-chip tc51-chip--accent">品牌故事</span>
+            <span class="tc51-chip">团队日常</span>
+          </div>
+        </div>
+        <div class="tc51-video-foot">
+          <span>作者 编导组·林野</span><span>播放 38.5万</span><span>点赞 3.3万</span><span>收藏 1.5万</span>
+          <div class="tc51-actions">
+            <button class="tc51-act" type="button" data-tc51-like="385000"><span>👍</span><span class="tc51-num">3.3万</span></button>
+            <button class="tc51-act" type="button" data-tc51-fav aria-pressed="false"><span>☆</span><span>收藏</span></button>
+            <button class="tc51-act" type="button" data-tc51-modal="tc51CommentModal"><span>💬</span><span>评论</span></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="tc51-video" data-tc51-searchable="治愈影像 慢生活 日常记录 城市">
+        <div class="tc51-video-top">
+          <div>
+            <h3>热搜之外的一条街：没有镜头的普通下午 <small>治愈影像 · 06:18</small></h3>
+            <p>不追热点的一天，只拍阳光、修车铺、便利店和一只趴在电动车上的猫。评论区说这是「吃瓜吃累了的解药」，我们把它做成了固定栏目。</p>
+            <span class="tc51-chip tc51-chip--green">治愈影像</span>
+            <span class="tc51-chip">日常记录</span>
+            <span class="tc51-chip">慢节奏</span>
+          </div>
+        </div>
+        <div class="tc51-video-foot">
+          <span>作者 慢速放映</span><span>播放 29.4万</span><span>点赞 2.9万</span><span>收藏 1.1万</span>
+          <div class="tc51-actions">
+            <button class="tc51-act" type="button" data-tc51-like="294000"><span>👍</span><span class="tc51-num">2.9万</span></button>
+            <button class="tc51-act" type="button" data-tc51-fav aria-pressed="false"><span>☆</span><span>收藏</span></button>
+            <button class="tc51-act" type="button" data-tc51-modal="tc51CommentModal"><span>💬</span><span>评论</span></button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== SPECIALS ===== -->
+  <section class="tc51-section tc51-container" id="tc51-specials" aria-labelledby="tc51-specials-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Specials</span>
+        <h2 id="tc51-specials-h">专题企划 · 让一次热点留下更长的时间</h2>
+      </div>
+      <p class="tc51-section-desc">每个企划围绕一个可延展的公共议题持续更新三到八条内容，由编辑部发起，创作者与社区共同补全。</p>
+    </div>
+
+    <div class="tc51-specials">
+      <article class="tc51-special" data-tc51-searchable="反转之前 企划 当事人 回应">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 280'%3E%3Crect width='560' height='280' fill='%23231a2d'/%3E%3Cg opacity='0.9'%3E%3Ccircle cx='430' cy='80' r='110' fill='%23ff5c8a' opacity='0.16'/%3E%3C/g%3E%3Crect x='52' y='56' width='260' height='26' rx='5' fill='%23ffffff' opacity='0.12'/%3E%3Crect x='52' y='98' width='190' height='14' rx='4' fill='%23ffffff' opacity='0.22'/%3E%3Crect x='52' y='124' width='220' height='14' rx='4' fill='%23ffffff' opacity='0.14'/%3E%3Cpath d='M52 216 L128 176 L204 202 L280 150 L356 186 L432 140' fill='none' stroke='%23ffd166' stroke-width='4' stroke-linecap='round'/%3E%3Ctext x='52' y='252' fill='%23ffffff' opacity='0.45' font-size='12' font-family='sans-serif'%3EBEFORE THE REVERSAL%3C/text%3E%3C/svg%3E" alt="专题企划反转之前的配图：反复波动的舆论曲线与标题骨架" width="560" height="280">
+        <h3>反转之前</h3>
+        <p>我们不急着给热点下结论，而是回到反转发生之前，看看当时的信息是什么、人们为什么相信它。</p>
+        <ul>
+          <li>EP01 · 一段没有上下文的录音如何走红（已上线）</li>
+          <li>EP02 · 评论区里最早的三条质疑（已上线）</li>
+          <li>EP03 · 当事人回应之后，讨论去了哪里（11月27日更新）</li>
+        </ul>
+        <div class="tc51-special-foot"><span>更新至 3/8 期</span><span class="tc51-chip tc51-chip--accent">连载中</span></div>
+      </article>
+
+      <article class="tc51-special" data-tc51-searchable="核查笔记 事实 来源 证据">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 280'%3E%3Crect width='560' height='280' fill='%23142320'/%3E%3Cg stroke='%234fd1a5' stroke-width='2' fill='none' opacity='0.8'%3E%3Crect x='60' y='50' width='200' height='150' rx='8'/%3E%3Cpath d='M60 96 L260 96'/%3E%3Cpath d='M120 50 L120 200'/%3E%3C/g%3E%3Cg stroke='%23ffd166' stroke-width='3' fill='none'%3E%3Cpath d='M310 200 L360 140 L400 168 L452 104 L500 130'/%3E%3C/g%3E%3Cg fill='%234fd1a5'%3E%3Ccircle cx='360' cy='140' r='5'/%3E%3Ccircle cx='452' cy='104' r='5'/%3E%3C/g%3E%3C/svg%3E" alt="专题企划核查笔记的配图：证据框与核查路径折线" width="560" height="280">
+        <h3>核查笔记</h3>
+        <p>每周一期，把本周被广泛传播但存在疑问的说法逐条摊开，标注核查路径与可信度区间。</p>
+        <ul>
+          <li>笔记 27 · 截图的时间戳为什么对不上（已上线）</li>
+          <li>笔记 28 · 三张相似照片的原始出处（已上线）</li>
+          <li>笔记 29 · 数据截图里的单位陷阱（11月29日更新）</li>
+        </ul>
+        <div class="tc51-special-foot"><span>更新至 28/52 期</span><span class="tc51-chip tc51-chip--green">周更</span></div>
+      </article>
+
+      <article class="tc51-special" data-tc51-searchable="吃瓜观察室 社区 投票 直播">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 280'%3E%3Crect width='560' height='280' fill='%23242118'/%3E%3Cg%3E%3Ccircle cx='280' cy='140' r='86' fill='none' stroke='%23ff5c8a' stroke-width='14' stroke-dasharray='300 240' stroke-linecap='round' transform='rotate(-90 280 140)'/%3E%3Ccircle cx='280' cy='140' r='86' fill='none' stroke='%23ffd166' stroke-width='14' stroke-dasharray='120 420' stroke-linecap='round' transform='rotate(60 280 140)'/%3E%3C/g%3E%3Ctext x='280' y='132' text-anchor='middle' fill='%23ffffff' font-size='30' font-weight='800' font-family='sans-serif'%3E52%25%3C/text%3E%3Ctext x='280' y='158' text-anchor='middle' fill='%23ffffff' opacity='0.5' font-size='12' font-family='sans-serif'%3EVIEWPOINT A%3C/text%3E%3C/svg%3E" alt="专题企划吃瓜观察室的配图：社区投票结果环形图" width="560" height="280">
+        <h3>吃瓜观察室</h3>
+        <p>社区共创观察节目。每周抛出一个选择题，让不同立场的人在同一个话题下各说三分钟。</p>
+        <ul>
+          <li>第 10 期 · 你会转发没有出处的截图吗（已上线）</li>
+          <li>第 11 期 · 围观算不算一种暴力（已上线）</li>
+          <li>第 12 期 · 你最想看到哪种后续（投票中）</li>
+        </ul>
+        <div class="tc51-special-foot"><span>参与 21.4 万人次</span><span class="tc51-chip">投票开启</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== AUTHORS ===== -->
+  <section class="tc51-section tc51-container" id="tc51-authors" aria-labelledby="tc51-authors-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Creators</span>
+        <h2 id="tc51-authors-h">创作者矩阵</h2>
+      </div>
+      <p class="tc51-section-desc">推特51每日吃瓜的签约与入驻创作者，覆盖核查、访谈、城市探索、数据研究与治愈影像等方向。</p>
+    </div>
+
+    <div class="tc51-authors">
+      <article class="tc51-author">
+        <div class="tc51-author-head">
+          <span class="tc51-avatar" style="background:linear-gradient(135deg,#ff5c8a,#ffd166)">林</span>
+          <div><strong>编导组·林野</strong><span>热点时间线 · 调查型长片</span></div>
+        </div>
+        <p>入行七年，前新闻栏目编导。擅长把混乱的信息还原成可读的时间线，主张「先把事实放稳，再谈情绪」。在推特51每日吃瓜负责焦点头条与「热搜十二小时」系列，习惯在片尾列出全部信息来源，欢迎观众逐条核对。</p>
+        <div class="tc51-author-stat"><span>作品 <b>186</b></span><span>粉丝 <b>42.6万</b></span></div>
+      </article>
+
+      <article class="tc51-author">
+        <div class="tc51-author-head">
+          <span class="tc51-avatar" style="background:linear-gradient(135deg,#4fd1a5,#7ce0ff)">周</span>
+          <div><strong>核查员老周</strong><span>信息核查 · 实用技巧</span></div>
+        </div>
+        <p>做过八年事实核查，说话慢，但每一句都带出处。他的视频里很少出现情绪化配乐，取而代之的是截图、时间戳和逐帧对照。老周相信普通人不需要成为专家，只要掌握四步简单方法，就能避开大多数误传的坑，这也是他持续更新教程的原因。</p>
+        <div class="tc51-author-stat"><span>作品 <b>94</b></span><span>粉丝 <b>31.2万</b></span></div>
+      </article>
+
+      <article class="tc51-author">
+        <div class="tc51-author-head">
+          <span class="tc51-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ff7ea6)">半</span>
+          <div><strong>谈话半径</strong><span>人物访谈 · 情感故事</span></div>
+        </div>
+        <p>一个只有三个人的访谈小组，选题偏好那些被讨论很多、却很少被完整倾听的人。采访前会花大量时间做背景功课，采访中很少打断，剪辑时坚持保留沉默的间隙。他们相信，让一个人说完自己的故事，本身就是对围观的一种修正。</p>
+        <div class="tc51-author-stat"><span>作品 <b>67</b></span><span>粉丝 <b>28.9万</b></span></div>
+      </article>
+
+      <article class="tc51-author">
+        <div class="tc51-author-head">
+          <span class="tc51-avatar" style="background:linear-gradient(135deg,#ffd166,#ff9f43)">厨</span>
+          <div><strong>数据厨房</strong><span>数据可视化 · 行业观察</span></div>
+        </div>
+        <p>用数据讲故事的内容团队，成员来自统计与设计两个背景。他们喜欢把抽象的平台机制画成能看懂的图，比如同一素材在不同推荐逻辑下的传播路径。视频节奏偏快，但每次都会在简介里附上完整数据表，方便同行复现与讨论。</p>
+        <div class="tc51-author-stat"><span>作品 <b>112</b></span><span>粉丝 <b>25.4万</b></span></div>
+      </article>
+
+      <article class="tc51-author">
+        <div class="tc51-author-head">
+          <span class="tc51-avatar" style="background:linear-gradient(135deg,#38bdf8,#818cf8)">慢</span>
+          <div><strong>慢速放映</strong><span>治愈影像 · 日常记录</span></div>
+        </div>
+        <p>常年拍城市里没什么剧情的角落：修车铺、旧书店、下雨的公交站。作品几乎不使用旁白，靠环境音和长镜头完成表达。慢速放映说，吃瓜吃累了的人需要一个可以喘气的地方，而他想做的就是这个缓冲区，让影像重新变得安静。</p>
+        <div class="tc51-author-stat"><span>作品 <b>141</b></span><span>粉丝 <b>22.7万</b></span></div>
+      </article>
+
+      <article class="tc51-author">
+        <div class="tc51-author-head">
+          <span class="tc51-avatar" style="background:linear-gradient(135deg,#f472b6,#a78bfa)">柠</span>
+          <div><strong>柠檬不酸</strong><span>社区观察 · 新晋创作者</span></div>
+        </div>
+        <p>本月新入驻的创作者，本职是大学生，做视频的起点是给宿舍同学解释热搜里到底发生了什么。风格随性、口语化，善用白板手绘拆解事件结构。她的首支作品上线两天播放破二十万，评论区称她是「翻译热搜的人」，本人则说只是把查资料的过程念出来而已。</p>
+        <div class="tc51-author-stat"><span>作品 <b>12</b></span><span>粉丝 <b>9.8万</b></span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== ANALYSIS ===== -->
+  <section class="tc51-section tc51-container" id="tc51-analysis" aria-labelledby="tc51-analysis-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Deep Dive</span>
+        <h2 id="tc51-analysis-h">深度解析：推特51每日吃瓜在做一件什么样的事</h2>
+      </div>
+      <p class="tc51-section-desc">约一千字的品牌自述，解释我们如何理解「吃瓜」、如何组织内容，以及为什么坚持把核查放在表达之前。</p>
+    </div>
+
+    <div class="tc51-analysis">
+      <div class="tc51-analysis-art">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Crect width='640' height='400' fill='%231a1d2a'/%3E%3Cg stroke='%23ffffff' opacity='0.12'%3E%3Cpath d='M80 320 L560 320'/%3E%3Cpath d='M80 80 L560 80'/%3E%3C/g%3E%3Cg fill='%23ff5c8a'%3E%3Ccircle cx='160' cy='240' r='30' opacity='0.9'/%3E%3Ccircle cx='300' cy='180' r='22' opacity='0.65'/%3E%3Ccircle cx='440' cy='220' r='26' opacity='0.8'/%3E%3C/g%3E%3Cg stroke='%23ffd166' stroke-width='2' opacity='0.7' fill='none'%3E%3Cpath d='M160 240 L300 180 L440 220 L520 140'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.5' font-family='sans-serif' font-size='12'%3E%3Ctext x='80' y='352'%3E记录%3C/text%3E%3Ctext x='240' y='352'%3E核查%3C/text%3E%3Ctext x='400' y='352'%3E讨论%3C/text%3E%3Ctext x='500' y='352'%3E留存%3C/text%3E%3C/g%3E%3C/svg%3E" alt="品牌方法论图示：记录核查讨论留存四个环节的节点连线" width="640" height="400">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Crect width='640' height='400' fill='%23231c22'/%3E%3Cg opacity='0.85'%3E%3Crect x='70' y='90' width='200' height='220' rx='12' fill='%23ff5c8a' opacity='0.18'/%3E%3Crect x='300' y='130' width='200' height='180' rx='12' fill='%23ffd166' opacity='0.16'/%3E%3C/g%3E%3Cg stroke='%23ffffff' opacity='0.25' fill='none' stroke-width='2'%3E%3Cpath d='M100 140 L240 140'/%3E%3Cpath d='M100 176 L210 176'/%3E%3Cpath d='M100 212 L232 212'/%3E%3Cpath d='M330 182 L470 182'/%3E%3Cpath d='M330 218 L430 218'/%3E%3C/g%3E%3Ccircle cx='500' cy='120' r='16' fill='%234fd1a5' opacity='0.7'/%3E%3C/svg%3E" alt="内容结构示意图：文字条目与图文卡片两种呈现方式的并列排布" width="640" height="400">
+      </div>
+
+      <div class="tc51-prose">
+        <h3>「吃瓜」不是轻浮，它是一种当代的公共观看</h3>
+        <p>
+          在推特51每日吃瓜这个品牌里，我们从不认为「吃瓜」是一个需要被遮掩的词。它描述的是这样一件事：一个普通人打开手机，看到某个陌生人的经历突然被推到眼前，然后忍不住多看两眼、多想一会儿。这种观看很日常，也很真实。问题从来不在于看不看，而在于看完之后我们留下了什么。如果一次围观只在情绪里升温、在遗忘中冷却，那它确实只是消遣；但如果它被整理、被核对、被记录成可以回看的影像档案，它就有可能变成理解社会的一块小拼图。作为一家以视频为核心的品牌，我们选择站在后一种可能性上。
+        </p>
+        <p>
+          这也决定了我们的内容结构。每日热点是入口，长片解析是骨架，创作者视角是血肉，社区讨论是呼吸。我们不追逐每一条爆款，而是判断哪些话题值得被做成 3 到 12 分钟的完整表达。一个合格的推特51每日吃瓜条目，通常要经历三道工序：第一道是事实清点，把已被确认的、仍存疑问的、无法核实的部分分开标注；第二道是视角补全，尽可能找到当事人、在场者与相关从业者的说法；第三道才是表达，把前面两步整理成观众愿意看完的影像。我们相信，对内容保持耐心，是对观众最基本的尊重。
+        </p>
+
+        <h3>为什么要坚持做信息核查</h3>
+        <p>
+          热点内容天然带有时效压力，很多创作者在事件刚出现时就急于下结论，因为越早表达越容易获得流量。我们理解这种选择，但仍然认为核查不应被牺牲。在推特51每日吃瓜的编辑部，核查员拥有和编导同等的署名权，也就是说，一条视频如果核查结论是「无法确认」，这个结论必须被放进成片，而不是被剪掉。很多观众第一次看到这种做法会觉得啰嗦，但当他们发现某条被广泛转发的截图其实来自三年前的旧闻时，就会明白这些啰嗦的价值。平台的品牌信用不是靠口号建立的，而是靠一次次愿意放慢速度累积起来的。
+        </p>
+        <div class="tc51-quote">
+          我们不承诺每条视频都是最终答案，但承诺每个结论都能追溯到它当时所依据的证据。热点会过去，证据会留下。
+        </div>
+        <p>
+          核查也带来了一种意外的社区氛围。评论区里逐渐出现了这样的用户：他们会主动在弹幕里补充原始链接，会在其他人转发不实信息时温和地提醒「这条已经有后续了」。这种自发的事实维护，是推特51每日吃瓜内容生态中最珍贵的部分。它让我们意识到，品牌真正能提供的不是权威，而是一种习惯——在开口之前，先确认一下自己看到的是什么。
+        </p>
+
+        <h3>创作者、社区与可持续的内容生态</h3>
+        <p>
+          如果只有编辑部，这个平台会很单薄。所以我们把相当一部分精力放在创作者生态上：为调查型创作者提供核查支持，为访谈类创作者提供选题线索，为新入驻的年轻人提供第一支视频的剪辑建议。目前入驻的创作者覆盖城市探索、数据研究、治愈影像、人物访谈等多个方向，他们的存在让同一条热点可以长出让不同观众进入的入口。习惯看数据的观众会打开「数据厨房」，偏爱安静的人会去「慢速放映」的频道坐一会儿，这种多元正是我们想要的社区形态。
+        </p>
+        <p>
+          在商业模式上，推特51每日吃瓜坚持内容与商业的清晰边界。广告与品牌合作内容会在片头明确标注，涉事企业的相关话题我们保留在接受商业合作时避嫌的原则。我们相信，一个能够长期被信赖的品牌，必须在某些时刻愿意放弃短期收益。持续运营的动力来自用户的选择：每天有几十万人打开官网看今天的更新，愿意在评论区认真打上几百字的观点，愿意把自己拍到的素材投稿给我们。这些行为构成了一个正向循环——观众获得更完整的信息，创作者获得更扎实的素材，品牌获得更长久的口碑。
+        </p>
+
+        <h3>未来：把每日的记录做成可检索的公共档案</h3>
+        <p>
+          接下来一年，推特51每日吃瓜会把重心放在两件事上。第一是档案化：把所有已上线的热点影像按时间、地域、话题类型建立可检索的索引，让用户可以在事件过去很久之后，依然能完整回看当时的记录，甚至对比同一议题在不同年份的讨论方式变化。第二是共创化：开放更多的社区企划入口，让普通用户也能发起小规模的观察项目，经过核查流程后进入正式内容池。我们相信，一个真正有价值的视频平台，不应该只是每天推送新内容的机器，而应该成为一座可以被反复翻开的档案库。
+        </p>
+        <p>
+          从行业角度看，热点资讯视频正在从「快」走向「准」，越来越多观众开始在意信息来源与表达边界。推特51每日吃瓜愿意把这条更慢的路走长一些。我们不追求成为最热闹的那一个，而是希望成为被信任的那一个——当一条消息真假难辨时，观众会条件反射地想到这里看看有没有更新。这种信任需要时间，而我们有耐心。
+        </p>
+        <div class="tc51-keyword-note">
+          官方说明：本文由推特51每日吃瓜品牌内容团队撰写，所述流程与原则适用于本站全部原创与正版内容。转载与合作请通过页脚联系方式沟通，我们欢迎行业同行批评指正。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMENTS ===== -->
+  <section class="tc51-section tc51-container" id="tc51-comments" aria-labelledby="tc51-comments-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Community Voice</span>
+        <h2 id="tc51-comments-h">用户口碑 · 他们怎么看推特51每日吃瓜</h2>
+      </div>
+      <p class="tc51-section-desc">来自官网、App 内与社区活动的真实评价摘录，评价维度涵盖内容质量、核查可信度、观看体验与社区氛围。</p>
+    </div>
+
+    <div class="tc51-comment-summary">
+      <div class="tc51-score">9.2<small> / 10</small></div>
+      <div class="tc51-bars">
+        <div class="tc51-bar"><span>内容质量</span><i><em style="width:94%"></em></i><span>94%</span></div>
+        <div class="tc51-bar"><span>核查可信</span><i><em style="width:96%"></em></i><span>96%</span></div>
+        <div class="tc51-bar"><span>观看体验</span><i><em style="width:88%"></em></i><span>88%</span></div>
+        <div class="tc51-bar"><span>社区氛围</span><i><em style="width:85%"></em></i><span>85%</span></div>
+      </div>
+      <div class="tc51-mini-stat">基于 18,642 条有效评价</div>
+    </div>
+
+    <div class="tc51-comments">
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#ff5c8a,#ffb86b)">阿</span><strong>阿茶不喝茶</strong><span>11月21日</span></div>
+        <p>看了《热搜十二小时》第41期，第一次知道原来一条视频的传播路径可以被画得这么清楚。以前刷到就刷到了，现在会习惯性等一等，看看有没有后续。</p>
+      </article>
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#4fd1a5,#7ce0ff)">江</span><strong>江边散步的猫</strong><span>11月20日</span></div>
+        <p>说实话有些期数节奏偏慢，编导可以考虑把核查过程压缩一点。但<a href="#tc51-analysis"><mark>核查笔记</mark></a>这个栏目我会一直追，已经帮我拦下三次误转了。</p>
+      </article>
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#a78bfa,#f472b6)">一</span><strong>一只加班狗</strong><span>11月19日</span></div>
+        <p>做运营的，实话讲这个官网的内容结构做得挺清楚。焦点头条和视频流分工明确，不像很多平台首页堆得要命，找东西找半天。</p>
+      </article>
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#38bdf8,#818cf8)">M</span><strong>Momo在看片</strong><span>11月18日</span></div>
+        <p>「慢速放映」那条没有镜头的下午，我看了两遍。吃瓜吃久了真的会累，谢谢你们留了这么一个可以喘气的地方，希望这个栏目不要停。</p>
+      </article>
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#ffd166,#f97316)">陈</span><strong>陈老师说事</strong><span>11月17日</span></div>
+        <p>把访谈里当事人的沉默保留下来，这个选择很专业。同行知道剪掉更容易出效果，但你们没剪。<a href="#tc51-faq"><mark>值得信赖</mark></a>这四个字不是随便说的。</p>
+      </article>
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#f472b6,#c084fc)">柠</span><strong>柠檬味的风</strong><span>11月16日</span></div>
+        <p>新人创作者的作品也给了推荐位，这点很难得。我看柠檬不酸那期白板拆解，画得很笨拙但讲得很明白，比很多华丽的视频有用。</p>
+      </article>
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#22d3ee,#4fd1a5)">不</span><strong>不睡觉的编辑</strong><span>11月15日</span></div>
+        <p>提个建议：搜索结果能不能显示更新时间？我想找某个事件的后续，翻得有点费劲。整体还是五星，官网加载速度不错。</p>
+      </article>
+      <article class="tc51-comment">
+        <div class="tc51-comment-head"><span class="tc51-avatar" style="background:linear-gradient(135deg,#fb7185,#f59e0b)">周</span><strong>周末躺平选手</strong><span>11月14日</span></div>
+        <p>就是喜欢这种不吼不叫的内容。别的主播一惊一乍的，这里的主持人说话像正常人聊天，看完不累，这点对我很重要。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== DYNAMICS + PARTNERS ===== -->
+  <section class="tc51-section tc51-container" id="tc51-dynamics" aria-labelledby="tc51-dynamics-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Newsroom & Partners</span>
+        <h2 id="tc51-dynamics-h">企业动态与合作品牌</h2>
+      </div>
+      <p class="tc51-section-desc">官方发布的更新日志、节目调整与合作信息，均在此处同步。合作不影响内容独立判断。</p>
+    </div>
+
+    <div class="tc51-split">
+      <div class="tc51-dynamics">
+        <article class="tc51-dyna">
+          <time>11月22日</time>
+          <div>
+            <h3>「反转之前」企划第三期定档 11月27日</h3>
+            <p>本期聚焦当事人回应之后的讨论走向，新增律师与心理工作者的双视角解读，片长预计 21 分钟。</p>
+          </div>
+        </article>
+        <article class="tc51-dyna">
+          <time>11月21日</time>
+          <div>
+            <h3>创作者「柠檬不酸」正式入驻并发布首播</h3>
+            <p>新栏目《白板拆瓜》每周三更新，用手绘方式解释一周内最容易被误读的热点，首期播放已破二十万。</p>
+          </div>
+        </article>
+        <article class="tc51-dyna">
+          <time>11月20日</time>
+          <div>
+            <h3>核查流程升级：新增双人复核环节</h3>
+            <p>所有涉及个人名誉的条目，须由两名核查员独立核对来源后方可上线，相关规范已写入内容手册。</p>
+          </div>
+        </article>
+        <article class="tc51-dyna">
+          <time>11月18日</time>
+          <div>
+            <h3>官网档案检索进入内测</h3>
+            <p>历史节目将按时间、地域、议题三类索引开放检索，内测期间欢迎社区用户提交使用反馈。</p>
+          </div>
+        </article>
+        <article class="tc51-dyna">
+          <time>11月16日</time>
+          <div>
+            <h3>「吃瓜观察室」第 12 期投票通道开启</h3>
+            <p>本期题目聚焦后续报道方向，投票结果将直接影响下周节目选题，通道将于今晚 22:00 关闭。</p>
+          </div>
+        </article>
+      </div>
+
+      <div>
+        <h3 style="font-size:15px;letter-spacing:1px;color:#fff;margin-bottom:14px">合作品牌与伙伴</h3>
+        <div class="tc51-partners">
+          <div class="tc51-partner">光年影像<span>CONTENT PARTNER</span></div>
+          <div class="tc51-partner">城市声音计划<span>FIELD RECORDING</span></div>
+          <div class="tc51-partner">开源事实库<span>FACT CHECK</span></div>
+          <div class="tc51-partner">慢速出版<span>PUBLISHING</span></div>
+        </div>
+        <p class="tc51-footnote">合作品牌仅提供素材、场地或技术支持，不参与选题与结论判断。品牌合作内容均会在片头标注。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / SUBMIT ===== -->
+  <section class="tc51-section tc51-container" aria-labelledby="tc51-cta-h">
+    <div class="tc51-cta">
+      <div>
+        <span class="tc51-kicker">Join the Community</span>
+        <h2 id="tc51-cta-h">你拍到的那段画面，可能正是缺失的一环</h2>
+        <p>推特51每日吃瓜长期开放投稿通道。无论是现场素材、当事人视角，还是你对某个话题的完整观察，都可以上传给我们。通过核查的投稿将进入正式内容池，并获得署名与稿酬。</p>
+      </div>
+      <div class="tc51-cta-actions">
+        <button class="tc51-btn tc51-btn--primary" type="button" data-tc51-modal="tc51SubmitModal">上传素材 / 投稿</button>
+        <a class="tc51-btn tc51-btn--ghost" href="#tc51-faq">查看投稿规范</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="tc51-section tc51-container" id="tc51-faq" aria-labelledby="tc51-faq-h">
+    <div class="tc51-section-head">
+      <div>
+        <span class="tc51-kicker">Help &amp; FAQ</span>
+        <h2 id="tc51-faq-h">常见问题</h2>
+      </div>
+      <p class="tc51-section-desc">关于内容、投稿、合作与核查的常见疑问，点击标题展开查看详细说明。</p>
+    </div>
+
+    <div class="tc51-faq">
+      <details open>
+        <summary>推特51每日吃瓜的内容是每天更新的吗？</summary>
+        <p>焦点头条与热门视频流在工作日每天 18:00 更新，周末与法定节假日根据热点情况调整，通常保持至少一条更新。专题企划按各自节奏连载，更新状态在企划卡片上标注。所有更新都会在页面顶部的公告条与「企业动态」中同步提示。</p>
+      </details>
+      <details>
+        <summary>如何判断你们的内容是否可信？</summary>
+        <p>每个条目在成片中会标注信息来源与核对时间，涉及争议的部分会明确区分「已确认」「存疑」与「无法核实」。如果一条视频的任何结论无法追溯证据，我们会在片中说明，而不是悄悄删掉。核查流程由独立的核查组负责，不接受商业方干预。</p>
+      </details>
+      <details>
+        <summary>我可以投稿吗？素材有什么要求？</summary>
+        <p>可以。我们接受现场视频、音频、截图与文字线索，优先希望获得未经过二次裁剪的原始文件。投稿时请尽量说明拍摄时间、地点与你的联系方式。通过初步核实的投稿将进入编辑流程，我们将与投稿者确认署名方式与稿酬。</p>
+      </details>
+      <details>
+        <summary>视频中涉及我个人，可以要求处理吗？</summary>
+        <p>可以。如果你认为某条内容涉及你的权益，请通过页脚联系方式提供具体期数与时间点，我们会在收到后尽快评估。对于个人隐私信息、非公开场所拍摄或未经同意的可识别影像，我们会按照相关规范进行遮挡、剪辑或下架处理。</p>
+      </details>
+      <details>
+        <summary>品牌合作会影响内容立场吗？</summary>
+        <p>不会。合作方的素材与场地支持必须在片头明确标注，合作方不参与选题、剪辑与结论判断。如果某期内容与潜在合作方存在直接利益关系，我们会主动回避或在该期暂停相关合作。</p>
+      </details>
+      <details>
+        <summary>可以转载你们的视频吗？</summary>
+        <p>欢迎规范转载。请保留片头片尾与官方标识，不得剪辑成断章取义的片段，不得用于商业用途。如需商业授权或二次创作，请通过页脚邮箱与我们联系，我们会提供清晰的授权范围说明。</p>
+      </details>
+      <details>
+        <summary>为什么有些视频只有文字列表，没有封面？</summary>
+        <p>为了保持阅读效率与页面加载速度，我们只给重点条目配置封面图，其余条目使用文字摘要呈现。这样在信息密度较高时，观众可以更快地判断哪些内容需要点开观看，也减少了不必要的资源消耗。</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="tc51-footer">
+  <div class="tc51-container">
+    <div class="tc51-footer-grid">
+      <div>
+        <h4>推特51每日吃瓜</h4>
+        <p>官方网站 · 每日更新的热点影像社区。我们以原创与正版内容为核心，深耕热点资讯视频这一垂直领域，持续为创作者与观众搭建高品质、值得信赖的内容生态。</p>
+        <p class="tc51-footnote">运营主体：推特五十一文化传媒有限公司<br>办公地址：城市影像产业园 B 座 6 层</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="#tc51-focus">今日焦点</a></li>
+          <li><a href="#tc51-videos">热门视频</a></li>
+          <li><a href="#tc51-specials">专题企划</a></li>
+          <li><a href="#tc51-authors">创作者矩阵</a></li>
+          <li><a href="#tc51-analysis">深度解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系与投稿</h4>
+        <ul>
+          <li>投稿邮箱：submit@tc51.example</li>
+          <li>合作邮箱：partner@tc51.example</li>
+          <li>内容申诉：appeal@tc51.example</li>
+          <li><a href="#tc51-faq">投稿规范与常见问题</a></li>
+          <li><button class="tc51-act" type="button" data-tc51-modal="tc51SubmitModal" style="margin-top:6px">在线提交素材</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tc51-footer-bottom">
+      <span>© 2026 推特51每日吃瓜 官方网站 版权所有</span>
+      <span>持续运营中 · 内容以核查为准</span>
+      <span>备案号：影备 2026-051 号</span>
+      <span>本站内容为原创与正版授权，未经许可不得用于商业用途</span>
+    </div>
+  </div>
+</footer>
+
+<button class="tc51-top" id="tc51Top" type="button" aria-label="回到顶部">↑</button>
+<div class="tc51-toast" id="tc51Toast" role="status" aria-live="polite"></div>
+
+<!-- comment modal -->
+<div class="tc51-modal" id="tc51CommentModal" role="dialog" aria-modal="true" aria-labelledby="tc51-comment-title">
+  <div class="tc51-modal-box">
+    <h3 id="tc51-comment-title">写下你的看法</h3>
+    <p class="tc51-modal-sub">请尽量提供你所了解的背景与来源，温和表达同样有力量。</p>
+    <textarea id="tc51CommentText" placeholder="说说你对这条内容的看法……"></textarea>
+    <input type="text" id="tc51CommentName" placeholder="昵称（可选）">
+    <div class="tc51-modal-actions">
+      <button class="tc51-btn tc51-btn--ghost tc51-btn--sm" type="button" data-tc51-close>取消</button>
+      <button class="tc51-btn tc51-btn--primary tc51-btn--sm" type="button" id="tc51CommentSubmit">发布评论</button>
+    </div>
+  </div>
+</div>
+
+<!-- submit modal -->
+<div class="tc51-modal" id="tc51SubmitModal" role="dialog" aria-modal="true" aria-labelledby="tc51-submit-title">
+  <div class="tc51-modal-box">
+    <h3 id="tc51-submit-title">素材投稿</h3>
+    <p class="tc51-modal-sub">请描述素材内容与拍摄背景。我们会在五个工作日内回复通过初筛的投稿。</p>
+    <input type="text" id="tc51SubmitTitle" placeholder="素材标题，例如：某夜市摊位现场记录">
+    <textarea id="tc51SubmitDesc" placeholder="拍摄时间、地点、内容简介，以及你希望说明的背景……"></textarea>
+    <input type="text" id="tc51SubmitContact" placeholder="联系方式（邮箱或社交账号）">
+    <div class="tc51-modal-actions">
+      <button class="tc51-btn tc51-btn--ghost tc51-btn--sm" type="button" data-tc51-close>取消</button>
+      <button class="tc51-btn tc51-btn--primary tc51-btn--sm" type="button" id="tc51SubmitSend">提交素材</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toastEl = document.getElementById('tc51Toast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove('is-on');
+    }, 2400);
+  }
+
+  /* mobile nav */
+  var burger = document.getElementById('tc51Burger');
+  var mobileNav = document.getElementById('tc51MobileNav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobileNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        mobileNav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* search */
+  var searchInput = document.getElementById('tc51Search');
+  var searchHint = document.getElementById('tc51SearchHint');
+  var videoItems = Array.prototype.slice.call(document.querySelectorAll('[data-tc51-searchable]'));
+  var searchTimer = null;
+
+  function runSearch(q){
+    q = q.trim().toLowerCase();
+    if(!q){
+      videoItems.forEach(function(it){ it.classList.remove('tc51-hidden'); });
+      searchHint.classList.remove('is-on');
+      return;
+    }
+    var hit = 0;
+    videoItems.forEach(function(it){
+      var key = (it.getAttribute('data-tc51-searchable') || '') + ' ' + it.textContent.toLowerCase();
+      var ok = key.toLowerCase().indexOf(q) > -1;
+      if(ok){ hit++; it.classList.remove('tc51-hidden'); }
+      else { it.classList.add('tc51-hidden'); }
+    });
+    searchHint.innerHTML = '搜索「<b>' + q.replace(/[<>&]/g,'') + '</b>」：命中 <b>' + hit + '</b> 条内容' +
+      (hit ? '，已为你筛选页面中的相关条目。' : '，暂时没有匹配结果，试试「核查」「访谈」或「城市」。');
+    searchHint.classList.add('is-on');
+  }
+
+  if(searchInput){
+    searchInput.addEventListener('input', function(){
+      clearTimeout(searchTimer);
+      var v = searchInput.value;
+      searchTimer = setTimeout(function(){ runSearch(v); }, 220);
+    });
+    searchInput.addEventListener('focus', function(){
+      if(searchInput.value.trim()) runSearch(searchInput.value);
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('.tc51-search')) searchHint.classList.remove('is-on');
+    });
+  }
+
+  /* like */
+  document.querySelectorAll('[data-tc51-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var numEl = btn.querySelector('.tc51-num');
+      var base = parseInt(btn.getAttribute('data-tc51-like'), 10) || 0;
+      var liked = btn.classList.toggle('is-on');
+      if(numEl){
+        var shown = base + (liked ? 1 : 0);
+        numEl.textContent = shown >= 10000 ? (shown/10000).toFixed(1) + '万' : shown;
+      }
+      toast(liked ? '已点赞，感谢支持' : '已取消点赞');
+    });
+  });
+
+  /* favorite */
+  document.querySelectorAll('[data-tc51-fav]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('is-on');
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var star = btn.querySelector('span');
+      if(star) star.textContent = on ? '★' : '☆';
+      var label = btn.querySelectorAll('span')[1];
+      if(label) label.textContent = on ? '已收藏' : '收藏';
+      toast(on ? '已加入收藏夹' : '已取消收藏');
+    });
+  });
+
+  /* copy link */
+  document.querySelectorAll('[data-tc51-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = window.location.href.split('#')[0];
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){
+          toast('链接已复制，欢迎分享给朋友');
+        }).catch(function(){
+          toast('复制失败，请手动复制地址栏链接');
+        });
+      } else {
+        toast('当前环境不支持自动复制，请手动复制地址栏链接');
+      }
+    });
+  });
+
+  /* modals */
+  var modals = Array.prototype.slice.call(document.querySelectorAll('.tc51-modal'));
+  function closeAllModals(){
+    modals.forEach(function(m){ m.classList.remove('is-on'); });
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-tc51-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-tc51-modal');
+      var target = document.getElementById(id);
+      if(target){
+        target.classList.add('is-on');
+        document.body.style.overflow = 'hidden';
+        var ta = target.querySelector('textarea, input');
+        if(ta) setTimeout(function(){ ta.focus(); }, 60);
+      }
+    });
+  });
+  document.querySelectorAll('[data-tc51-close]').forEach(function(btn){
+    btn.addEventListener('click', closeAllModals);
+  });
+  modals.forEach(function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m) closeAllModals();
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeAllModals();
+  });
+
+  /* comment submit */
+  var commentSubmit = document.getElementById('tc51CommentSubmit');
+  if(commentSubmit){
+    commentSubmit.addEventListener('click', function(){
+      var text = document.getElementById('tc51CommentText').value.trim();
+      if(text.length < 4){
+        toast('评论内容太短了，至少写四个字吧');
+        return;
+      }
+      document.getElementById('tc51CommentText').value = '';
+      document.getElementById('tc51CommentName').value = '';
+      closeAllModals();
+      toast('评论已提交，审核通过后展示');
+    });
+  }
+
+  /* submit material */
+  var submitSend = document.getElementById('tc51SubmitSend');
+  if(submitSend){
+    submitSend.addEventListener('click', function(){
+      var title = document.getElementById('tc51SubmitTitle').value.trim();
+      var desc = document.getElementById('tc51SubmitDesc').value.trim();
+      var contact = document.getElementById('tc51SubmitContact').value.trim();
+      if(!title || !desc || !contact){
+        toast('请完整填写标题、描述与联系方式');
+        return;
+      }
+      document.getElementById('tc51SubmitTitle').value = '';
+      document.getElementById('tc51SubmitDesc').value = '';
+      document.getElementById('tc51SubmitContact').value = '';
+      closeAllModals();
+      toast('素材已提交，我们会尽快联系你');
+    });
+  }
+
+  /* back to top */
+  var topBtn = document.getElementById('tc51Top');
+  if(topBtn){
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 520) topBtn.classList.add('is-on');
+      else topBtn.classList.remove('is-on');
+    }, {passive:true});
+  }
+
+  /* animated counters */
+  var counters = document.querySelectorAll('[data-tc51-count]');
+  function animate(el){
+    var target = parseInt(el.getAttribute('data-tc51-count'), 10) || 0;
+    var suffix = el.getAttribute('data-tc51-suffix') || '';
+    var start = null;
+    var dur = 1300;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.floor(target * eased);
+      el.textContent = val.toLocaleString('zh-CN') + (suffix && p === 1 ? suffix : '') + (p === 1 ? '+' : '');
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString('zh-CN') + (suffix ? '万' : '') + '+';
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          animate(en.target);
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:.4});
+    counters.forEach(function(c){ io.observe(c); });
+  } else {
+    counters.forEach(function(c){
+      c.textContent = c.getAttribute('data-tc51-count') + (c.getAttribute('data-tc51-suffix') || '') + '+';
+    });
+  }
+
+})();
+</script>
+</body>
+        </html>
